@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let animals =['cat','dog','rat','pig'];
+        console.log(animals);
+        console.log(typeof animals);
+
+        let litaralobject= {
+            name:'kavindu',
+            age :22,
+            town :"matara",
+            newFunction(){
+                console.log(this.name);
+            }
+
+        }
+
+
+        
+        let litaralobject2= {
+            name:'lakindu',
+            age :22,
+            town :"galle",
+            newFunction(){
+                console.log(this.name);
+            }
+
+        }
+
+        console.log(litaralobject);
+        litaralobject.newFunction();
+
+        console.log(litaralobject2);
+        litaralobject2.newFunction();
+    </script>
+</body>
+</html>

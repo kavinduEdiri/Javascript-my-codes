@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-d6jQ1Zq5a0JpFNEeAVb+NqOXF7c1M2DECB5860zYI5qj98Dpwr+0DTt8M3dM+cb" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>photos</h2>
+        <button type="button" class="btn btn-warning" onclick="loadData()">Click photo here</button>
+        <button type="button" class="btn btn-secondary" onclick="saveData()">Save data</button>
+        <button type="button" class="btn btn-warning" onclick="updateData()">update data</button>
+        <button type="button" class="btn btn-info" onclick="findData()">find data</button>
+        <button type="button" class="btn btn-dark" onclick="deleteData()">find data</button>
+    </div>
+
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Album ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Thumbnail</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Table rows will be added dynamically here -->
+        </tbody>
+    </table>
+
+    <script>
+        const fetchData = (callback) => {
+            // Load data
+            $.ajax({
+                url: 'https://jsonplaceholder.typicode.com/photos',
+                method: 'GET',
+                dataType: 'json',
+                success: (response) => {
+                    console.log(response);
+                    callback(response);
+                },
+                error: (err) => {
+                    console.log(err);
+                }
+            });
+        }
+
+        const loadData = () => {
+            fetchData((data) => {
+                console.log(data);
+
+                // Clear existing rows
+                $('.table tbody').empty();
+
+                // Append new rows
+                $.each(data, (i, element) => {
+                    const row = $('<tr>');
+
+                    const colId = $('<td>').text(element.id);
+                    const colAlbum = $('<td>').text(element.albumId);
+                    const colTitle = $('<td>').text(element.title);
+                    const colImage = $('<td>').append($('<img>').attr('src', element.thumbnailUrl).css({ width: '70px', height: '70px' }));
+
+                    row.append(colId, colAlbum, colTitle, colImage);
+                    $('.table tbody').append(row);
+                });
+            });
+        }
+
+
+
+        const saveData= ()=>{
+            const newData ={
+                "albumId" :1,
+                "id" :1,
+                "title" :'title-01',
+                "url" :"https://via.plaeholder.com/photos",
+                "thumbnailUrl" :"https://via.plaeholder.com/150/92c95"
+            }
+
+            $.ajax({
+                url: 'https://jsonplaceholder.typicode.com/photos',
+                method: 'GET',
+                dataType: 'json',
+                success: (response) => {
+                    console.log(response);
+                    callback(response);
+                },
+                error: (err) => {
+                    console.log(err);
+                }
+            });
+
+
+        }
+
+
+
+        //=======================================update===========================
+
+        const updateData= ()=>{
+            const newData ={
+                "albumId" :1,
+                "id" :1,
+                "title" :'title-01',
+                "url" :"https://via.plaeholder.com/photos",
+                "thumbnailUrl" :"https://via.plaeholder.com/150/92c95"
+            }
+
+            $.ajax({
+                url: 'https://jsonplaceholder.typicode.com/photos',
+                method: 'PUT',
+                dataType: 'json',
+                success: (response) => {
+                    console.log(response);
+                    callback(response);
+                },
+                error: (err) => {
+                    console.log(err);
+                }
+            });
+
+
+        }
+
+        //====================find data=========================
+
+        const findData= ()=>{
+            let id =500;
+
+            $.ajax({
+                url: `https://jsonplaceholder.typicode.com/photos/$(id)`,
+                method: 'GET',
+                dataType: 'json',
+                success: (response) => {
+                    console.log(response);
+                    callback(response);
+                },
+                error: (err) => {
+                    console.log(err);
+                }
+            });
+
+
+        }
+    </script>
+</body>
+</html>

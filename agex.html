@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="formId">
+        <label for="postId">Post Id:</label>  
+        <input type="number" name="postid" id="postId"> <br>
+        <button type="submit" id="btnId" > Load Data</button>
+
+
+        <script>
+            /* let btn =document.getElementById('btnId');
+
+            btn.addEventListener('click',(event)=>{
+                event.preventDefault();
+
+                let data =document.getElementById('postId');
+                let id='';
+                let ajaxReq= new XMLHttpRequest();
+                ajaxReq.open('GET','https://jsonplaceholder.typicode.com/posts');
+
+                agexReq.onLoad()=  ()=>{
+                    if(ajaxReq == 200){
+                        console.log(ajaxReq.responseText);
+                    }
+                }
+                ajaxReq.send();
+            }); */
+
+
+            let btn =document.getElementById('btnId');
+
+            btn.addEventListener('click',(event)=>{
+                event.preventDefault();
+
+                let data =document.getElementById('postId');
+                let id='';
+                let ajaxReq= new XMLHttpRequest();
+                ajaxReq.open('GET','https://jsonplaceholder.typicode.com/posts');
+
+                ajaxReq.onreadystatechange=  ()=>{
+                    if(ajaxReq.readyState === 4 && ajaxReq.status ===200){
+                        console.log(ajaxReq.responseText);
+                    }
+                
+                }
+                ajaxReq.send();
+            });
+        </script>
+
+    </form>
+
+
+    <script>
+
+    </script>
+    
+</body>
+</html>

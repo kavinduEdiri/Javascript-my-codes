@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Contact Information</h1>
+    <input type="number" id="input1"> <br>
+    <input type="number" id="input2"> <br>
+    <button id="btn">Click Here</button><br>
+    <button id="btn2">Danger</button><br>
+
+    <script> 
+        console.log('===============================Javascript is running==========================================');
+        let h1 =document.querySelector('h1');
+         h1.style.color='yellow';
+        
+
+        /* ==================================================================== */
+            document.getElementById('btn').addEventListener('click', function() {
+
+                console.log('===============================function is calling==========================================');
+
+                let h1 =document.querySelector('h1');
+                h1.style.color='green'; 
+       
+                let inputElement = document.getElementById('input1');
+                let inputValue = inputElement.value;
+                console.log('Input Value:', inputValue);
+
+                let inputElement2 = document.getElementById('input2');
+                let inputValue2 = inputElement2.value;
+                console.log('Input Value2:', inputValue2);
+
+               
+
+                let num1 =parseInt(inputValue);
+                let num2 = parseInt(inputValue2);
+
+
+                let total = num1 + num2;
+                console.log("total is :",total);
+
+               
+        });
+
+        document.getElementById('btn2').addEventListener('mouseover',()=>{
+                    btn2.style.color='blue';
+                });
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let token ="kamalkalamakaalam";
+        localStorage.setItem('my-token',token); 
+
+        //========================================================
+
+        sessionStorage.setItem('my-token-2','mama kavindu hakmana');
+        let str =sessionStorage.getItem('my-token-2');
+        let jObj =JSON.parse(str);
+        sessionStorage.removeItem('my-token-2');
+        sessionStorage.clear();
+
+    </script>
+</body>
+</html>

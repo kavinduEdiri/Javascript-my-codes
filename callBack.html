@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+   
+
+
+    <!-- ============================================================================= -->
+    <script>
+
+        let monety=10;
+        console.log('start');
+
+        function getLoan(callback){
+            console.log('loan apply');
+            
+            setTimeout(()=>{
+                console.log('loan approved');
+                money=500000;
+                console.log('take the loan');
+                callback();
+            },3000);
+
+        }
+
+
+
+
+        function byCar(){
+            console.log('make the payment');
+            console.log('Happy or Sad');
+            console.log('end');
+        }
+
+
+
+        getLoan(byCar);
+        console.log('find a vihicle');
+
+        
+
+       
+        
+       
+    </script>
+</body>
+</html>

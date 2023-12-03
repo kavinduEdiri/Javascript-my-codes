@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log('1');
+        consoe.log('2');
+
+        const loadData =(ul,calback)=>{
+            const http =new XMLHttpRequest();
+            http.addEventListener('readystatechange',()=>{
+
+                if(http.readyState == 4 && http.status == 200){
+                    callback(undefined,JSON.parse(http.responseText));
+                }
+                else if(http.readyState ==4){
+                    callback('error!',undefined);
+                }
+                    
+                
+            });
+            http.open('GET',url);
+            http.send();
+        }
+
+
+
+        loadData('https://jsonplaceholder.typicode.com/comments',(eror,data)=>{  //call back hell 
+            console.log(data);
+
+            loadData('https://jsonplaceholder.typicode.com/posts',(error,data)=>{
+                console.log(data);
+            });
+        })
+    </script>
+</body>
+</html>

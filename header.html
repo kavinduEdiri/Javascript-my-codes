@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>header</title>
+    <style>
+        body{
+            height: 5000px;
+        }
+        *{
+            margin:0 ;
+        }
+        .header{
+            width: 100%;
+            height: 80px;
+            background-color: aqua;
+            position: sticky;
+            top: 0;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="header" id="header"></div>
+
+    <script>
+        window.addEventListener('scroll', ()=>{
+            if(window.pageYOffset > 100){
+                document.getElementById('header').style.backgroundColor='blue'
+            }
+            else{
+                document.getElementById('header').style.backgroundColor='aque'
+            }
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document -01</title>
+    
+</head>
+<body>
+    
+
+    <script> 
+    function person(name,address){
+        this.name =name;
+        this.address=address;
+    }
+
+    const kamal =new person('kamal','matara');
+    const nimal =new person('nimal','galle');
+
+    console.log(kamal);
+    console.log(kamal.name);
+    console.log(kamal.address);
+
+    console.log(nimal);
+    console.log(nimal.name);
+    console.log(nimal.address);
+       
+
+    kamal._proto_ =nimal;
+    </script>
+</body>
+</html>

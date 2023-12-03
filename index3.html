@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">HEADING 1</h1>
+    <button>change the content</button>
+
+
+    <!-- ============================================================================= -->
+    <script src="">
+        let headingEl =document.getElementById('heading');
+        let btnEl =document.querySelector('button');
+
+        btnEl.addEventListener('click',function(){
+        headingEl.textContent='new content';
+            });
+       
+    </script>
+</body>
+</html>

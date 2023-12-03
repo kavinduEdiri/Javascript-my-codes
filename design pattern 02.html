@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document -01</title>
+    
+</head>
+<body>
+    
+
+    
+    <script> 
+    class customer{
+        constructor(name,address){
+            this.name=name;
+            this.age=age;
+        }
+    }
+
+
+
+    class Factory{
+        createCustomer(name,address){
+            return new customer(name,address);
+        }
+    }
+
+
+
+    const factory = new Factory();
+    const cus1 =Factory.createCustomer('nimal','matara');
+    const cus2 =Factory.createCustomer('bimal','matara');
+
+    consle.log(cus1);
+    console.log(cus2);
+    
+    </script>
+</body>
+</html>

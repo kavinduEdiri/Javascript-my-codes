@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document -01</title>
+    
+</head>
+<body>
+    
+
+    
+    <script> 
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition((location)=>{
+            const longitude =location.coords.longitude;
+            const latitude= location.coords.latitude;
+
+            console.log('longitude:'+longitude);
+            console.log('latitude:'+latitude);
+        });
+    }
+    else{
+        console.log('not support!');
+    }
+    </script>
+</body>
+</html>

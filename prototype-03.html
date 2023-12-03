@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document -01</title>
+    
+</head>
+<body>
+    
+
+    <script> 
+
+  function Man(name){
+    this.name=name;
+  }
+
+  let saman =new Man('saman');
+
+  Man.prototype.gender ='male';
+  Man.prototype.seyHello= ()=>{
+    console.log('hello!');
+  };
+
+  console.log(saman);
+  console.log(saman.name);
+  console.log(saman.gender);
+  saman.seyHello();
+
+    </script>
+</body>
+</html>

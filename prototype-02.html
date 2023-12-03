@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document -01</title>
+    
+</head>
+<body>
+    
+
+    <script> 
+
+    let animal ={
+        walk :'animal walk',
+        makeSound:()=>{
+            console.log("animal sound");
+        }
+    }
+
+
+    let dog ={
+        bread : 'game balla',
+        makeSound:()=>{
+            console.log("bark");
+        }
+    }
+
+    dog._proto_= animal;
+
+    console.log(animal);
+    console.log(dog);
+
+    console.log(dog.bread);
+    console.log(dog.walk);
+    </script>
+</body>
+</html>
